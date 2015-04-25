@@ -1,0 +1,75 @@
+alias l='ls -al'
+alias lr='ls -ltr'
+alias b2='cd ../..'
+alias b3='cd ../../..'
+alias b4='cd ../../../..'
+alias vilast='vi `ls -tr1 | tail -1`'
+alias show='cat ~/.ssh/config'
+alias showhosts='cat /etc/hosts'
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export CATALINA_HOME=/usr/local/tomcat
+export GRAILS_HOME=/Users/sfriedland/dev/code/grails-2.3.5
+
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#export PATH=export/jdk/jdk1.7.0_10/bin:/nfs/tools/jmeter/jmeter_versions/apache-jmeter-2.10/bin:$PATH
+export PATH=$PATH:$HOME/dev/code/apache-jmeter-2.10/bin:$CATALINA_HOME/bin:$HOME/dev/code/grails-2.3.5/bin:$HOME/dev/code/gradle-1.12/bin:$HOME/dev/code/apache-activemq-5.10.0/bin
+
+function psg {
+ps -ef | grep $1
+}
+
+function setprompt {
+PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+}
+
+function tt {
+PROMPT_COMMAND="echo -ne \"\033]0;$1 \007\""
+}
+
+#tt "MAC"
+setprompt
+
+function todate {
+perl -e "print scalar localtime($1 / 1000)"
+echo ""
+}
+
+alias gosip='cd /Users/sfriedland/steve/projects/sip/sip'
+alias godev='cd /Users/sfriedland/dev'
+alias goapache='cd /opt/local/apache2'
+alias goamq='cd $HOME/dev/code/apache-activemq-5.10.0'
+alias gocart='cd /data/shoebuy/sites/cart-checkout'
+alias gosb='cd /data/shoebuy/sites/shoebuy.com'
+
+alias csi='ssh frontend1.csi.rsp.shoebuy.com'
+alias csiapp='ssh app1.csi.rsp.shoebuy.com'
+alias cant='ssh frontend1.cant.rsp.shoebuy.com'
+alias cantapp='ssh app1.cant.rsp.shoebuy.com'
+
+alias sipstart=$HOME/steve/projects/sip/tomcat/startup.sh
+alias sipstop=$HOME/steve/projects/sip/tomcat/shutdown.sh
+alias siplogs='cd $HOME/steve/projects/sip/tomcat/logs;ls -ltr'
+alias sipssh='ssh -i ~/.ssh/sip2_id_rsa 53a870b65973ca53fd000016@sip-namhintest2.rhcloud.com'
+alias sipaws='ssh -l ubuntu -i ~/ji-key.pem 54.68.246.234'
+
+alias sbstartap='sudo /opt/local/apache2/bin/apachectl start'
+alias sbstopap='sudo /opt/local/apache2/bin/apachectl stop'
+alias sbstarttc='/sb/apps/tomcat/tomcat7 start'
+alias sbstoptc='/sb/apps/tomcat/tomcat7 stop'
+
+alias repo='cd /repo/default'
+alias crepo='cd /repo/cantina/shoebuy'
+
+alias cleardns='sudo killall -HUP mDNSResponder'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/sfriedland/.gvm/bin/gvm-init.sh" ]] && source "/Users/sfriedland/.gvm/bin/gvm-init.sh"
+
+export NVM_DIR="/Users/sfriedland/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
