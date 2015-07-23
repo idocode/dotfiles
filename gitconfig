@@ -1,6 +1,8 @@
 [user]
-  email=steve@idocode.com
-  name=Steve Friedland
+  email=stephen.friedland@shoebuy.com
+  name=Stephen Friedland
+ # email=steve@idocode.com
+ # name=Steve Friedland
 [core]
 	editor = vi
 	excludesfile = /Users/sfriedland/.gitignore_global
